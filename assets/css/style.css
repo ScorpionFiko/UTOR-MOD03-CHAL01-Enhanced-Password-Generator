@@ -1,9 +1,10 @@
+/* sets up styling for the entire document*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
+/* sets up common styling for the specific elements and the class */
 html,
 body,
 .wrapper {
@@ -12,24 +13,26 @@ body,
   padding: 0;
 }
 
+/* sets up styling for the body element */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* sets up additional styling for the wrapper class */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
-
+/* sets up styling for the header */
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
-
+/* sets up styling to the card class that encompasses the password generation window */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -41,7 +44,7 @@ header {
   max-width: 800px;
   padding: 30px 40px;
 }
-
+/* sets up styling for the pseudo element ::after in the card header section */
 .card-header::after {
   content: " ";
   display: block;
@@ -49,15 +52,15 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-
+/*sets up styling for the card body */
 .card-body {
   min-height: 100px;
 }
-
+/* sets up styling for the card footer */
 .card-footer {
   text-align: center;
 }
-
+/* sets up styling for the pseudo element ::before in the card footer section */
 .card-footer::before {
   content: " ";
   display: block;
@@ -65,13 +68,13 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-
+/* sets up styling for the pseudo element ::after in the card footer section */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
-
+/* sets up stying for the button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -87,16 +90,16 @@ header {
   text-align: center;
   cursor: pointer;
 }
-
+/* sets up styling for the button when disabled */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
-
+/* sets up styling for floating right */
 .float-right {
   float: right;
 }
-
+/* sets up styling for the password text area */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -117,20 +120,22 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-
+/* sets up styling for varoius small screen devices */
 @media (max-width: 690px) {
+  /* updates the styling for the button */
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
-
+  /* updates the styling for the text area */
   #password {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 500px) {
+  /* updates the styling for the button */
   .btn {
     font-size: 0.8rem;
   }
