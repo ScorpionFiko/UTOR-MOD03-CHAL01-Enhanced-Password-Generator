@@ -129,13 +129,20 @@ button[disabled] {
   position: absolute;
   top: 10px;
   left: 10px;
-  display: none;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   width: 375px;
   background-color: rgba(200,200,200,1);
   padding: 5px;
+}
+/* sets styling for hiding the form */
+.hide {
+  display: none;
+}
+/* sets styling for showing the form */
+.show {
+  display: flex;
 }
 /* sets up styling for the form verbiage */
 .form-inputs-text {
