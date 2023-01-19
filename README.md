@@ -80,4 +80,6 @@ Please refer to the LICENSE in the repo.
 ## (Un)Known Issues
 In the development of the form, <form> element is used and the button is a <button> element. However, when the <button> is pressed, it makes the form act based on the action specified on the form. In this case it is action="#" - i.e. page refresh. Based on this, upon first load of page and first usage of the password generator, the form submits and the page refreshes. This erases the original password the application has provided. Upon subsequent usage, the application behaves properly.
 
-This behaviour was fixed by switching the <button> from the user form to an <input>. Appropriate comments added to the HTML file. Now clicking the button does not submit the form.
+There are two solutions to fix this:<br>
+- switching the <button> from the user form to an <input> and linking the onclick event listener to the input button.
+- adding event.preventDefault in the event listener for the form button. This option has been used in the code.
