@@ -52,9 +52,11 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
-/*sets up styling for the card body */
+/* sets up styling for the card body */
+/* added position styling to help position the hidden form */
 .card-body {
   min-height: 100px;
+  position: relative;
 }
 /* sets up styling for the card footer */
 .card-footer {
@@ -120,6 +122,54 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+/* Adding styling for the user form */
+/* sets up styling for the form */
+.popup-form {
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 375px;
+  background-color: rgba(200,200,200,1);
+  padding: 5px;
+}
+/* sets up styling for the form verbiage */
+.form-inputs-text {
+  margin: 6px 2px 2px 2px;
+  padding: 5px;
+  border-bottom:2px solid #434344;
+  border-radius: 6px;
+}
+/* sets up styling for the form labels */
+.form-input-group {
+  margin: 2px;
+  padding: 5px 5px 5px 20px;
+  border:2px dashed #434344;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+/* sets up styling for the form hint span */
+.form-input-group .hint {
+  font-size: .8em;
+  padding: 5px;
+}
+/* sets up error styling for the form inputs */ 
+.red-border {
+  border-color: red;
+}
+/* sets up additional slider styling */
+.yes-no {
+  width:50px;
+}
+
+
 /* sets up styling for varoius small screen devices */
 @media (max-width: 690px) {
   /* updates the styling for the button */
@@ -138,5 +188,16 @@ button[disabled] {
   /* updates the styling for the button */
   .btn {
     font-size: 0.8rem;
+  }
+  /* updates the styling of the form */
+  .popup-form {
+    width: 100%;
+  }
+}
+/* added an additional small screen styling */
+@media (max-width: 375px) {
+  /* updates the styling of the form input grouping */
+  .form-input-group {
+    flex-direction: column;
   }
 }

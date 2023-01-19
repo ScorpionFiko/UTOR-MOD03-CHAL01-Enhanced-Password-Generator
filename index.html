@@ -31,39 +31,39 @@
           form is hidden until user clicks on the "generate password" button -->
           <form action="#" id="pwdInputs" class="popup-form">
             <p class="form-inputs-text">Please select password length:</p>
-            <section class="form-inputs">
+            <section class="form-input-group">
               <label for="pwdLength" class="float-left">password length 
                 <span id="labelSpanPwdLabel" class="hint"></span>
               </label>
-              <input class="float-right" id="pwdLength" type="range" min="8" max="128" value="32">
+              <input id="pwdLength" type="range" min="8" max="128" value="32">
             </section>
             
             <p class="form-inputs-text">Please select at least one character type:</p>
-            <section class="form-inputs">
+            <section class="form-input-group">
               <label for="pwdNumeric" class="float-left">numeric 
                 <span id="labelSpanPwdNumeric" class="hint"></span>
               </label>
-              <input class="float-right" id="pwdNumeric" type="range" min="0" max="1" value="1">
+              <input class="yes-no" id="pwdNumeric" type="range" min="0" max="1" value="1">
             </section>
             
-            <section class="form-inputs">
+            <section class="form-input-group">
               <label for="pwdLower" class="float-left">lowercase letters 
                 <span id="labelSpanPwdLower" class="hint"></span>
               </label>
-              <input class="float-right" id="pwdLower" type="range" min="0" max="1" value="1">
+              <input class="yes-no" id="pwdLower" type="range" min="0" max="1" value="1">
             </section>
             
-            <section class="form-inputs">
+            <section class="form-input-group">
               <label for="pwdUpper" class="float-left">uppercase letters
                 <span id="labelSpanPwdUpper" class="hint"></span>
               </label>
-              <input class="float-right" id="pwdUpper" type="range" min="0" max="1" value="1">
+              <input class="yes-no" id="pwdUpper" type="range" min="0" max="1" value="1">
             </section>
-            <section class="form-inputs">
+            <section class="form-input-group">
               <label for="pwdSpecial" class="float-left">special characters
                 <span id="labelSpanPwdSpecial" class="hint"></span>
               </label>
-              <input class="float-right" id="pwdSpecial" type="range" min="0" max="1" value="1"> 
+              <input class="yes-no" id="pwdSpecial" type="range" min="0" max="1" value="1"> 
             </section>
             <section>
               <button id="continue" class="btn float-right">Continue</button>
