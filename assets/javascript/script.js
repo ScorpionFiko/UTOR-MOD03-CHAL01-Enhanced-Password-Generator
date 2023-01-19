@@ -44,7 +44,9 @@ usrForm["pwdSpecial"].oninput = function() {
   validateCharTypeInput();
 }
 // adding event listener for the continue button
-usrForm['continue'].onclick = function() {
+usrForm['continue'].onclick = function(event) {
+  // preventing the form from reloading and clearing the input
+  event.preventDefault();
   // hides the form and writes the password
   hideInputForm();
   writePassword();
