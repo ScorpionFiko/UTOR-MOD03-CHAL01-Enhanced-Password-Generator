@@ -1,6 +1,11 @@
 // Assignment Code
 // code refactoring -> updated all previous var to let
 let generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+// changed the event listener function to showInputForm function to display the form
+generateBtn.addEventListener("click", showInputForm);
+
+/************************ FORM INTERACTION CODE */
 // getting access to the user form and its elements
 let usrForm = document.getElementById("pwdInputs");
 // adding oninput listeners to the 5 user inputs
@@ -43,52 +48,6 @@ usrForm['continue'].onclick = function() {
   // hides the form and writes the password
   hideInputForm();
   writePassword();
-}
-
-
-// Write password to the #password input
-function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-// changed the event listener function to showInputForm function to display the form
-generateBtn.addEventListener("click", showInputForm);
-
-function generatePassword() {
-  // passWord variable to hold the password
-  let passWord = "";
-  // arrays with the different types of characters
-  let numericChars = ["0","1","2","3","4","5","6","7","8","9"];
-  let lowerChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  let upperChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  let specialChars = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~","\\"]; 
-  // empty password array that will be populated with user selected characters types
-  let passwordArray = [];
-  // populating password array with user selected character types
-  if (usrForm['pwdNumeric'].value === "1") {
-    passwordArray=passwordArray.concat(numericChars);
-  }
-  if (usrForm['pwdLower'].value === "1") {
-    passwordArray=passwordArray.concat(lowerChars);
-  }
-  if (usrForm['pwdUpper'].value === "1") {
-    passwordArray=passwordArray.concat(upperChars);
-  }
-  if (usrForm['pwdSpecial'].value==="1") {
-    passwordArray=passwordArray.concat(specialChars);    
-  }
-  // for the password length, selects a random character from the password array and add it to the variable
-  // explicitly casting the password length to an integer
-  for (let i = 1; i <= parseInt(usrForm['pwdLength'].value); i++) {
-    passWord = passWord + passwordArray[Math.floor(Math.random() * passwordArray.length)]
-  }
-  // return the variable
-  return passWord;
 }
 // shows the input form
 function showInputForm() {
@@ -137,4 +96,45 @@ function validateCharTypeInput() {
     usrForm['pwdSpecial'].parentNode.classList.remove("red-border");
     usrForm['continue'].disabled=false;
   }
+}
+/************ PASSWORD GENERATION CODE */
+// Write password to the #password input
+function writePassword() {
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+// generates the password from the character type selected by the user
+function generatePassword() {
+  // passWord variable to hold the password
+  let passWord = "";
+  // arrays with the different types of characters
+  let numericChars = ["0","1","2","3","4","5","6","7","8","9"];
+  let lowerChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  let upperChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  let specialChars = ["!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~","\\"]; 
+  // empty password array that will be populated with user selected characters types
+  let passwordArray = [];
+  // populating password array with user selected character types
+  if (usrForm['pwdNumeric'].value === "1") {
+    passwordArray=passwordArray.concat(numericChars);
+  }
+  if (usrForm['pwdLower'].value === "1") {
+    passwordArray=passwordArray.concat(lowerChars);
+  }
+  if (usrForm['pwdUpper'].value === "1") {
+    passwordArray=passwordArray.concat(upperChars);
+  }
+  if (usrForm['pwdSpecial'].value==="1") {
+    passwordArray=passwordArray.concat(specialChars);    
+  }
+  // for the password length, selects a random character from the password array and add it to the variable
+  // explicitly casting the password length to an integer
+  for (let i = 1; i <= parseInt(usrForm['pwdLength'].value); i++) {
+    passWord = passWord + passwordArray[Math.floor(Math.random() * passwordArray.length)]
+  }
+  // return the variable
+  return passWord;
 }

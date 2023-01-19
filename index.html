@@ -30,7 +30,7 @@
           All input changes automatically updated in the "hint" span using javascript. 
           Form is hidden until user clicks on the "generate password" button -->
           <form action="#" id="pwdInputs" class="popup-form hide">
-            <p class="form-inputs-text">Please select password length:</p>
+            <p id="lengthSelection" class="form-inputs-text">Please select password length:</p>
             <section class="form-input-group">
               <label for="pwdLength" class="float-left">password length 
                 <span id="labelSpanPwdLabel" class="hint"></span>
@@ -38,7 +38,7 @@
               <input class="length" id="pwdLength" type="range" min="8" max="128" value="32">
             </section>
             
-            <p class="form-inputs-text">Please select at least one character type:</p>
+            <p id="charTypeSelection"  class="form-inputs-text">Please select at least one character type:</p>
             <section class="form-input-group">
               <label for="pwdNumeric" class="float-left">numeric 
                 <span id="labelSpanPwdNumeric" class="hint"></span>
@@ -66,7 +66,8 @@
               <input class="yes-no" id="pwdSpecial" type="range" min="0" max="1" value="1"> 
             </section>
             <section>
-              <button id="continue" class="btn float-right">Continue</button>
+              <!-- replaced the <button> to <input> to prevent form from submitting -->
+              <input id="continue" class="btn float-right" value="Continue">
             </section>              
           </form>
         </div>
