@@ -132,8 +132,8 @@ button[disabled] {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 375px;
-  background-color: rgba(200,200,200,1);
+  width: 100%;
+  background-color: rgba(240,240,240,1);
   padding: 5px;
 }
 /* sets styling for hiding the form */
@@ -148,14 +148,14 @@ button[disabled] {
 .form-inputs-text {
   margin: 6px 2px 2px 2px;
   padding: 5px;
-  border-bottom:2px solid #434344;
+  border-bottom:2px solid #c0c7cf;
   border-radius: 6px;
 }
 /* sets up styling for the form labels */
 .form-input-group {
   margin: 2px;
   padding: 5px 5px 5px 20px;
-  border:2px dashed #434344;
+  border:2px dashed #c0c7cf;
   border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
@@ -171,9 +171,13 @@ button[disabled] {
 .red-border {
   border-color: red;
 }
-/* sets up additional slider styling */
+/* sets up additional slider styling for the character type inputs */
 .yes-no {
-  width:50px;
+  width: 50px;
+}
+/* sets up additional slider styling for the length input */
+.length {
+  width: 40%;
 }
 
 
@@ -200,11 +204,17 @@ button[disabled] {
   .popup-form {
     width: 100%;
   }
-}
-/* added an additional small screen styling */
-@media (max-width: 375px) {
-  /* updates the styling of the form input grouping */
+  /* updates the styling for the input fields*/
   .form-input-group {
     flex-direction: column;
+    width: 100%;
+  }
+  /* updates the styling for the yes-no inputs */ 
+  .yes-no {
+    width: 100%;
+  }
+  /* updates the styling for the length input */
+  .length {
+    width: 100%;
   }
 }

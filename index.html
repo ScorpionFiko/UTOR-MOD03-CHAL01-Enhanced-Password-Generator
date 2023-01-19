@@ -24,18 +24,18 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
-          <!-- created user form to collect the required input 
-          all form inputs are 'sliders' to prevent bad user input
-          slider values (default and changed) are displayed in the "hint" span to the right of the label 
-          all input changes automatically updated in the "hint" span using javascript 
-          form is hidden until user clicks on the "generate password" button -->
+          <!-- created user form to collect the required input. 
+          All form inputs are 'sliders' to prevent bad user input.
+          Slider values (default and changed) are displayed in the "hint" span to the right of the label. 
+          All input changes automatically updated in the "hint" span using javascript. 
+          Form is hidden until user clicks on the "generate password" button -->
           <form action="#" id="pwdInputs" class="popup-form hide">
             <p class="form-inputs-text">Please select password length:</p>
             <section class="form-input-group">
               <label for="pwdLength" class="float-left">password length 
                 <span id="labelSpanPwdLabel" class="hint"></span>
               </label>
-              <input id="pwdLength" type="range" min="8" max="128" value="32">
+              <input class="length" id="pwdLength" type="range" min="8" max="128" value="32">
             </section>
             
             <p class="form-inputs-text">Please select at least one character type:</p>
