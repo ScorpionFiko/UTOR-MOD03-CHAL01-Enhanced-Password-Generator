@@ -9,7 +9,7 @@ Repository containing the code for the enhanced password generator. The website 
 
 The series of prompts for the password length and character types is presented on the screen via a user form that is initially hidden. The form gets displayed to the user once the "generate password" button is pressed. To prevent bad user input, the form uses sliders or inputs of type range that the user can modify using the mouse or their finger. The change in the slider value is also immediately displayed on the form. The user must select at least one of the character types in order to generate a password; otherwise the user can not proceed and the border of all character type inputs will turn red bringing it up to the user's attention.
 
-If all inputs are in place, a password of supplied length is generated from the selected characters types. Please note: the only special character as per (website) that is omitted is the space (' '). A leading or trailing space character may mislead the user. In addition, may forms may "trim" the password string (i.e. remove leading or trailing spaces) leading to a wrong password error.  
+If all inputs are in place, a password of supplied length is generated from the selected characters types. Please note: the only special character as per ![]() that is omitted is the space (' '). A leading or trailing space character may mislead the user. In addition, may forms may "trim" the password string (i.e. remove leading or trailing spaces) leading to a wrong password error.  
 
 The hidden user form will appear on top and slightly offset from the existing password box. It is responsive and will modify the look once the screen width is reduced.
 

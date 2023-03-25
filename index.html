@@ -1,82 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <!-- code refactoring - moving CSS file to an assets/css folders-->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-          <!-- created user form to collect the required input. 
-          All form inputs are 'sliders' to prevent bad user input.
-          Slider values (default and changed) are displayed in the "hint" span to the right of the label. 
-          All input changes automatically updated in the "hint" span using javascript. 
-          Form is hidden until user clicks on the "generate password" button -->
-          <form action="#" id="pwdInputs" class="popup-form hide">
-            <p id="lengthSelection" class="form-inputs-text">Please select password length:</p>
-            <section class="form-input-group">
-              <label for="pwdLength" class="float-left">password length 
-                <span id="labelSpanPwdLabel" class="hint"></span>
-              </label>
-              <input class="length" id="pwdLength" type="range" min="8" max="128" value="32">
-            </section>
-            
-            <p id="charTypeSelection"  class="form-inputs-text">Please select at least one character type:</p>
-            <section class="form-input-group">
-              <label for="pwdNumeric" class="float-left">numeric 
-                <span id="labelSpanPwdNumeric" class="hint"></span>
-              </label>
-              <input class="yes-no" id="pwdNumeric" type="range" min="0" max="1" value="1">
-            </section>
-            
-            <section class="form-input-group">
-              <label for="pwdLower" class="float-left">lowercase letters 
-                <span id="labelSpanPwdLower" class="hint"></span>
-              </label>
-              <input class="yes-no" id="pwdLower" type="range" min="0" max="1" value="1">
-            </section>
-            
-            <section class="form-input-group">
-              <label for="pwdUpper" class="float-left">uppercase letters
-                <span id="labelSpanPwdUpper" class="hint"></span>
-              </label>
-              <input class="yes-no" id="pwdUpper" type="range" min="0" max="1" value="1">
-            </section>
-            <section class="form-input-group">
-              <label for="pwdSpecial" class="float-left">special characters
-                <span id="labelSpanPwdSpecial" class="hint"></span>
-              </label>
-              <input class="yes-no" id="pwdSpecial" type="range" min="0" max="1" value="1"> 
-            </section>
-            <section>
-              <!-- changed back to button and used JS to prevent submission -->
-              <button id="continue" class="btn float-right" >Continue</button>
-            </section>              
-          </form>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <!-- code refactoring - moving CSS file to an assets/css folders-->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+        <form action="#" id="pwdInputs" class="popup-form hide">
+          <p id="lengthSelection" class="form-inputs-text">Please select password length:</p>
+          <section class="form-input-group">
+            <label for="pwdLength" class="float-left">password length
+              <span id="labelSpanPwdLabel" class="hint"></span>
+            </label>
+            <input class="length" id="pwdLength" type="range" min="8" max="128" value="32">
+          </section>
+
+          <p id="charTypeSelection" class="form-inputs-text">Please select at least one character type:</p>
+          <section class="form-input-group">
+            <label for="pwdNumeric" class="float-left">numeric
+              <span id="labelSpanPwdNumeric" class="hint"></span>
+            </label>
+            <input class="yes-no" id="pwdNumeric" type="range" min="0" max="1" value="1">
+          </section>
+
+          <section class="form-input-group">
+            <label for="pwdLower" class="float-left">lowercase letters
+              <span id="labelSpanPwdLower" class="hint"></span>
+            </label>
+            <input class="yes-no" id="pwdLower" type="range" min="0" max="1" value="1">
+          </section>
+
+          <section class="form-input-group">
+            <label for="pwdUpper" class="float-left">uppercase letters
+              <span id="labelSpanPwdUpper" class="hint"></span>
+            </label>
+            <input class="yes-no" id="pwdUpper" type="range" min="0" max="1" value="1">
+          </section>
+          <section class="form-input-group">
+            <label for="pwdSpecial" class="float-left">special characters
+              <span id="labelSpanPwdSpecial" class="hint"></span>
+            </label>
+            <input class="yes-no" id="pwdSpecial" type="range" min="0" max="1" value="1">
+          </section>
+          <section>
+
+            <button id="continue" class="btn float-right">Continue</button>
+          </section>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div><span id="labelSpanFooter" class="hint"></span></div>
+        <button id="generate" class="btn">Generate Password</button>
       </div>
     </div>
-    <!-- code refactoring - moving CSS file to an assets/css folders-->
-    <script src="./assets/javascript/script.js"></script>
-  </body>
+  </div>
+  <!-- code refactoring - moving CSS file to an assets/css folders-->
+  <script src="./assets/javascript/script.js"></script>
+</body>
+
 </html>
